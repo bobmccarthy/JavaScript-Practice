@@ -84,7 +84,7 @@ function allCombos(word){
 	}
 	return completeArray;
 }
-console.log(allCombos('dog'));
+// console.log(allCombos('dog'));
 
 
 //order the letters in a string
@@ -402,20 +402,98 @@ var isSquare = function(arr){
 // console.log(isSquare([4,8,27]));
 // console.log('empty: '+isSquare([]));
 
+// validate an image path is an image
+
+function imageFilter(arr) {
+	var finalArray=[];
+	arr.map((eachElement)=>{
+		var possibleArray = eachElement.split('.');
+		var last=possibleArray[possibleArray.length-1].toLowerCase();
+		if (possibleArray.length==1||possibleArray[0]==''){
+			// console.log(possibleArray[1].toLowerCase());
+			finalArray.push(null);
+		}
+		else if (last!=='jpg' && last!=='gif' && last!=='jpeg' && last!=='png' && last!=='exif' && last!=='tiff' && last!=='bmp' && last!=='svg'){
+			finalArray.push(null);
+		}
+		else{
+			possibleArray.unshift(eachElement);
+			finalArray.push(possibleArray);
+		}
+	})
+	return finalArray;
+}
+
+// console.log(imageFilter(['_imgName.png', 'tiff.tiff.pdf']));
+
+
+// ||possibleArray[1].toLowerCase()!=='png'||possibleArray[1].toLowerCase()!=='jpeg'||possibleArray[1].toLowerCase()!=='gif'||possibleArray[1].toLowerCase()!=='exif'||possibleArray[1].toLowerCase()!=='tiff'||possibleArray[1].toLowerCase()!=='bmp'||possibleArray[1].toLowerCase()!=='svg'
+
+//|| last!=='png' || last!=='jpeg' || last!=='gif' || last!=='exif' || last!=='tiff' || last!=='bmp' || last!=='svg'
+
+
+//if it is a number doubled, 33 - 66 - 8989, return it. otherwise times by 2
+
+function trickyDoubles(n){
+	var h = n.toString();
+	var l = h.length/2;
+	var j = h.substring(0,l);
+	var k = h.substring(l);
+	if (h.length==1){
+		return n*2;
+	}
+	else if (j==k){
+		return n;
+	}
+	else{
+		return n*2;
+	}
+}
+
+// console.log(trickyDoubles(2));
+// console.log(trickyDoubles(33));
+// console.log(trickyDoubles(7878));
+// console.log(trickyDoubles(34));
+// console.log(trickyDoubles(123123));
 
 
 
+//takes 2 diameters of a cup (top and bottom), returns volume;
+
+function cupVolume(d1, d2, height){
+	var r1=d1/2;
+	var r2=d2/2;
+  if (d1==d2){
+    return ((Math.PI*((d1/2)*(d1/2))*height).toFixed(2))/1;
+  }
+  else{
+    return ((((1/3)*Math.PI*height)*((r1*r1)+(r1*r2)+(r2*r2))).toFixed(2))/1;
+  }
+}
+// console.log(cupVolume(1,1,1));
+// console.log(cupVolume(4,5,6));
 
 
+//you can see what it does from the console log, but it is failing a test on code wars.
 
-
-
-
-
-
-
-
-
-
+function range(start, count) {
+  var newArray=[];
+  for (var i=0; i<count; i++){
+    newArray.push(start+i);
+  }
   
- 
+  return newArray;
+}
+
+console.log(range(-1,4));
+
+function summ(arr){
+	var sum=0;
+	for (var j=0; j<arr.length; j++){
+		sum = sum + arr[j];
+	}
+	return sum;
+}
+
+console.log(summ([0,1,2]));
+
