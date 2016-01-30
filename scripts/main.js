@@ -36,33 +36,36 @@ function myName(obj){
 // console.log(myName({name:'Snoop Dog',age:47}));
 
 
-function guessNum(){
-	var counter=0;
-	var guess=0;
-	var secretNum = Math.floor(Math.random()*10)+1;
-	do {
-		console.log(secretNum);
-		counter++;
-		guess = window.prompt('Pick Number')
-	}
-	while (guess!=secretNum);
-	if (counter==1){
-		console.log('YEAH!, after '+counter+' try!');
-		main.innerHTML=('<h1>YEAH!</h1>');
-	}
-	else{
-		console.log('Finally, after '+counter+' tries!');
-	}
+// function guessNum(){
+// 	var counter=0;
+// 	var guess=0;
+// 	var secretNum = Math.floor(Math.random()*10)+1;
+// 	do {
+// 		console.log(secretNum);
+// 		counter++;
+// 		guess = window.prompt('Pick Number')
+// 	}
+// 	while (guess!=secretNum);
+// 	if (counter==1){
+// 		console.log('YEAH!, after '+counter+' try!');
+// 		main.innerHTML=('<h1>YEAH!</h1>');
+// 	}
+// 	else{
+// 		console.log('Finally, after '+counter+' tries!');
+// 	}
 	
-};
+// };
 
-// var number = 12345;
-// function reverse(num){
-// 	num=num+'';
-// 	console.log(num.split('').reverse().join(''));
-// }
 
-var word = 'dog';
+function reverse(num){
+	num=num+'';
+	return num.split('').reverse().join('');
+}
+// console.log(reverse(12345));
+
+
+// output an array with each letter combo based on a word given
+
 function allCombos(word){
 	var combosArray=word.split('');
 	var completeArray=[];
@@ -81,6 +84,10 @@ function allCombos(word){
 	}
 	return completeArray;
 }
+console.log(allCombos('dog'));
+
+
+//order the letters in a string
 
 var word = 'abernathy';
 //aabehnrty
@@ -106,6 +113,10 @@ function order (string){
 	return stringArray.reverse().join('');
 	
 }
+
+
+//write a factorial function
+
 var number = 5;
 function factorial(number){
 	var sum=number;
@@ -116,6 +127,8 @@ function factorial(number){
 }
 
 // console.log(factorial(number));
+
+//how many of this character in a string
 
 function exists(string, letter){
 	var stringArray = string.split('');
@@ -128,6 +141,9 @@ function exists(string, letter){
 	return 'There are '+totalLetter+' '+letter+'`s in '+string;
 }
 // console.log(exists('hippopotomus','o'));
+
+
+//Greatest Common Denominator
 
 function gcd (num1, num2){
 	if (num1>num2){
@@ -143,7 +159,10 @@ function gcd (num1, num2){
 	}
 	
 }
-// console.log(gcd(12,18));
+// console.log(gcd(364,5110));
+
+
+//lists all numbers between 2 numbers.
 
 function between(arg1, arg2){
 	var newArray=[];
@@ -155,6 +174,8 @@ function between(arg1, arg2){
 // console.log(between(1,9));
 
 
+//exponential function
+
 function exp(num, exponent){
 	var total=1;
 	for (var i=exponent; i>0; i=i-1){
@@ -164,6 +185,8 @@ function exp(num, exponent){
 }
 // console.log(exp(3,3));
 
+
+//sort an array from biggest to smallest i think
 
 function sortof(array){
 	var array1 = array;
@@ -202,6 +225,9 @@ function grades(obj){
 }
 
 // console.log(grades({dave:70,kim:80,doofus:40}));
+
+
+//FizzBuzz
 
 function fizzbuzz(){
 	for (var i=1; i<101; i++){
@@ -256,6 +282,9 @@ function armstrong(arg){
 // ==============================================================
 
 
+//sort this object by values: return and array dupel the property name and value
+// input {'A':1,'B':2,'C':3}   -----> output [['C',3],['B',2],['A',1]]
+
 function sortDict(dict){
   var newArrayA=[];
   var newArrayB=[];
@@ -304,6 +333,8 @@ function sortDict(dict){
 // console.log(sortDict({1:5,2:2,3:10,6:3,8:8}));
 
 
+//adds all numbers between two numbers including both
+
 function GetSum( a,b ){
   var sum = 0;
   if (a>b){
@@ -321,7 +352,7 @@ function GetSum( a,b ){
 // console.log(GetSum(8,-1));
 
 
-
+// finds all numbers below hMax where the sum of each digit to the argument2 power equals the number
 
 function eqSumPowdig(hMax, exp) {
   var finalArray = [];
@@ -340,6 +371,8 @@ function eqSumPowdig(hMax, exp) {
 }
 // console.log(eqSumPowdig(400, 3));
 
+
+// Write a function that takes an array and sees if each number has a whole number square root.
 
 var isSquare = function(arr){
   var counter=0;
